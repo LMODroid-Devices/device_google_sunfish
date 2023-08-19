@@ -33,7 +33,7 @@ PRODUCT_PACKAGES += \
     HbmSVManagerOverlay
 
 # Lineage Health
-include hardware/google/pixel/lmodroid_health/device.mk
+include hardware/google/pixel/lineage_health/device.mk
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
