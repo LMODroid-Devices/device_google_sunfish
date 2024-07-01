@@ -12,6 +12,9 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys-intf/display \
     vendor/qcom/opensource/display
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # AiAi Config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/allowlist_com.google.android.as.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/allowlist_com.google.android.as.xml
@@ -20,6 +23,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
+
+# DebugFS
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # EUICC
 PRODUCT_COPY_FILES += \
@@ -52,6 +58,10 @@ PRODUCT_PACKAGES += \
 include hardware/google/pixel/touch/device.mk
 
 # Build necessary packages for system_ext
+
+# Audio
+PRODUCT_PACKAGES += \
+    libaudioroute.vendor
 
 # Display
 PRODUCT_PACKAGES += \
@@ -92,8 +102,11 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
-    libmedia_ecoservice.vendor \
     libstagefright_bufferpool@2.0.1.vendor
+
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
 
 # Confirmation UI
 PRODUCT_PACKAGES += \
@@ -148,7 +161,8 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0.vendor:64 \
     libwifi-hal:64 \
     libwifi-hal-ctrl:64 \
-    libwifi-hal-qcom
+    libwifi-hal-qcom \
+    libwifi-system-iface.vendor:64
 
 # Misc interfaces
 PRODUCT_PACKAGES += \
@@ -192,6 +206,13 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor:64 \
     android.hardware.weaver@1.0.vendor:64 \
     android.system.net.netd@1.1.vendor:64
+
+# Misc
+PRODUCT_PACKAGES += \
+    libcrypto_utils.vendor:64 \
+    libpng.vendor \
+    libsqlite.vendor \
+    libssl.vendor:32
 
 # Properties
 TARGET_VENDOR_PROP := $(LOCAL_PATH)/vendor.prop

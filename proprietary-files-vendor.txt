@@ -1,6 +1,6 @@
 # All blobs are extracted from Google factory images for each new ASB
 vendor/app/CACertService/CACertService.apk
-vendor/app/CneApp/CneApp.apk
+vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_symlink
 vendor/app/IWlanService/IWlanService.apk
 vendor/app/TimeService/TimeService.apk
 vendor/app/adreno_graphics_driver/adreno_graphics_driver.apk;PRESIGNED
@@ -534,11 +534,11 @@ vendor/lib/com.qualcomm.qti.uceservice@2.1.so
 vendor/lib/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
 vendor/lib/egl/libQTapGLES.so
-vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
@@ -700,6 +700,7 @@ vendor/lib/libmaxxaudio.so
 vendor/lib/libmaxxaudioqdsp.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libmdsprpc.so
+vendor/lib/libmedia_ecoservice.so
 vendor/lib/libminkdescriptor.so
 vendor/lib/libminksocket.so
 vendor/lib/libmm-color-convertor.so
@@ -977,11 +978,11 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib64/deviceInfoServiceModule.so
 vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
 vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/g3a.data.manager.vendor.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -1165,6 +1166,7 @@ vendor/lib64/liblqe.so
 vendor/lib64/libmaxxaudio.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libmdsprpc.so
+vendor/lib64/libmedia_ecoservice.so
 vendor/lib64/libminkdescriptor.so
 vendor/lib64/libminksocket.so
 vendor/lib64/libmm-color-convertor.so

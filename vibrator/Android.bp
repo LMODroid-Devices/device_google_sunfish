@@ -19,17 +19,34 @@ package {
 
 cc_defaults {
     name: "PixelVibratorDefaultsSunfish",
-    defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     static_libs: [
         "PixelVibratorCommonSunfish",
     ],
     shared_libs: [
         "libbase",
-        "libhidlbase",
+        "libbinder_ndk",
         "libcutils",
+        "libhardware",
         "liblog",
         "libutils",
-        "libhardware",
     ],
+}
+
+cc_defaults {
+    name: "PixelVibratorBinaryDefaultsSunfish",
+    defaults: ["PixelVibratorDefaultsSunfish"],
+    shared_libs: [
+        "android.hardware.vibrator-V2-ndk",
+    ],
+}
+
+cc_defaults {
+    name: "PixelVibratorTestDefaultsSunfish",
+    defaults: ["PixelVibratorDefaultsSunfish"],
+    static_libs: [
+        "android.hardware.vibrator-V2-ndk",
+    ],
+    test_suites: ["device-tests"],
+    require_root: true,
 }
