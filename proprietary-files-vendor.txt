@@ -1,4 +1,8 @@
-# All blobs are extracted from Google factory images for each new ASB
+# All blobs below are extracted from the release mentioned in proprietary-files.txt
+
+# libril-qcril-hook-oem depends on libril, which is a gnu makefile target
+# lowi-server, libcne, libwqe depend on libwpa_client, which is a gnu makefile target
+
 vendor/app/CACertService/CACertService.apk
 vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_symlink
 vendor/app/IWlanService/IWlanService.apk
@@ -49,7 +53,7 @@ vendor/bin/init.qti.chg_policy.sh
 vendor/bin/irsc_util
 vendor/bin/ks
 vendor/bin/loc_launcher
-vendor/bin/lowi-server
+vendor/bin/lowi-server;DISABLE_CHECKELF
 vendor/bin/modem_svc
 vendor/bin/msm_irqbalance
 vendor/bin/netmgrd
@@ -240,6 +244,7 @@ vendor/etc/data/netmgr_config.xml
 vendor/etc/default_snd.mps
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.2-service.fpc.rc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/etc/init/android.hardware.camera.provider@2.7-service-google.rc
 vendor/etc/init/android.hardware.confirmationui@1.0-service-google.rc
 vendor/etc/init/android.hardware.drm-service.widevine.rc
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
@@ -347,6 +352,7 @@ vendor/etc/sensors/sns_reg_config
 vendor/etc/st54j_aram.txt
 vendor/etc/st54j_aram_cts.txt
 vendor/etc/thermal-engine.conf
+vendor/etc/vintf/manifest/android.hardware.camera.provider@2.7-service-google.xml
 vendor/etc/vintf/manifest/android.hardware.confirmationui@1.0-service-google.xml
 vendor/etc/vintf/manifest/android.hardware.identity.strongbox.xml
 vendor/etc/vintf/manifest/android.hardware.keymaster@4.1-service.citadel.xml
@@ -508,22 +514,8 @@ vendor/firmware/widevine.b07
 vendor/firmware/widevine.mdt
 vendor/firmware/wlanmdsp.mbn
 vendor/framework/com.google.android.camera.experimental2020_midyear.jar
-vendor/lib/adsp_camera/libhalide_hexagon_remote_skel.so
+vendor/lib/adsp_camera/libhalide_hexagon_remote_skel.so;DISABLE_DEPS
 vendor/lib/btaudio_offload_if.so
-vendor/lib/camera/components/com.qti.eisv2.so
-vendor/lib/camera/components/com.qti.eisv3.so
-vendor/lib/camera/components/com.qti.stats.aec.so
-vendor/lib/camera/components/com.qti.stats.af.so
-vendor/lib/camera/components/com.qti.stats.afd.so
-vendor/lib/camera/components/com.qti.stats.asd.so
-vendor/lib/camera/components/com.qti.stats.awb.so
-vendor/lib/camera/components/com.qti.stats.haf.so
-vendor/lib/camera/components/com.qti.stats.localhistogram.so
-vendor/lib/camera/components/com.qti.stats.pdlib.so
-vendor/lib/camera/components/com.qti.stats.pdlibsony.so
-vendor/lib/camera/components/com.qti.stats.pdlibwrapper.so
-vendor/lib/camera/components/libmmcamera_cac3.so
-vendor/lib/com.google.3abase.so
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/com.qualcomm.qti.imscmservice@2.0.so
@@ -574,7 +566,7 @@ vendor/lib/libGPTEE_vendor.so
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libI420colorconvert.so
--vendor/lib/libMpeg4SwEncoder.so
+vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -605,7 +597,7 @@ vendor/lib/libadm.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libadsp_default_listener.so
--vendor/lib/libadsprpc.so
+vendor/lib/libadsprpc.so
 vendor/lib/libaoa.so
 vendor/lib/libash.so
 vendor/lib/libasn1cper.so
@@ -636,7 +628,7 @@ vendor/lib/libcdfw_remote_api.so
 vendor/lib/libcdsp_default_listener.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libcirrusspkrprot.so
-vendor/lib/libcne.so
+vendor/lib/libcne.so;DISABLE_CHECKELF
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
@@ -752,7 +744,7 @@ vendor/lib/librcc.so
 vendor/lib/libril-qc-logger.so
 vendor/lib/libril-qc-ltedirectdisc.so
 vendor/lib/libril-qc-radioconfig.so
-vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/libril-qcril-hook-oem.so;DISABLE_CHECKELF
 vendor/lib/librilqmiservices.so
 vendor/lib/librmnetctl.so
 vendor/lib/librmp.so
@@ -807,7 +799,7 @@ vendor/lib/libvpphvx.so
 vendor/lib/libvppimmotion.so
 vendor/lib/libvsc.so
 vendor/lib/libwms.so
-vendor/lib/libwqe.so
+vendor/lib/libwqe.so;DISABLE_CHECKELF
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
 vendor/lib/qcrild_librilutils.so
@@ -880,7 +872,7 @@ vendor/lib/vendor.qti.hardware.radio.am@1.0.so
 vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 vendor/lib/vendor.qti.hardware.slmadapter@1.0.so
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so;MODULE_SUFFIX=-vendor
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib/vendor.qti.ims.callcapability@1.0.so
@@ -892,7 +884,7 @@ vendor/lib/vendor.qti.ims.rcsconfig@1.1.so
 vendor/lib/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib/vendor.qti.imsrtpservice@3.0-service-Impl.so
-vendor/lib/vendor.qti.imsrtpservice@3.0.so
+vendor/lib/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=-vendor
 vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib/vendor.qti.latency@2.1.so
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
@@ -1019,7 +1011,7 @@ vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libI420colorconvert.so
--vendor/lib64/libMpeg4SwEncoder.so
+vendor/lib64/libMpeg4SwEncoder.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
 vendor/lib64/libOmxAlacDecSw.so
@@ -1042,6 +1034,8 @@ vendor/lib64/lib_aion_buffer.so
 vendor/lib64/lib_goog_chi_node_utils.so
 vendor/lib64/lib_goog_fatp_utils.so
 vendor/lib64/lib_goog_metadata_utils.so
+vendor/lib64/lib_profiler.so
+vendor/lib64/lib_sensor_listener.so
 vendor/lib64/liba2dpoffload.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -1049,7 +1043,7 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libadsp_default_listener.so
--vendor/lib64/libadsprpc.so
+vendor/lib64/libadsprpc.so
 vendor/lib64/libaoa.so
 vendor/lib64/libash.so
 vendor/lib64/libasn1cper.so
@@ -1080,7 +1074,7 @@ vendor/lib64/libcdfw_remote_api.so
 vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libcirrusspkrprot.so
-vendor/lib64/libcne.so
+vendor/lib64/libcne.so;DISABLE_CHECKELF
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
 vendor/lib64/libcneqmiutils.so
@@ -1226,7 +1220,7 @@ vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-logger.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
-vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/libril-qcril-hook-oem.so;DISABLE_CHECKELF
 vendor/lib64/librilqmiservices.so
 vendor/lib64/librmnetctl.so
 vendor/lib64/librmp.so
@@ -1278,7 +1272,7 @@ vendor/lib64/libvpphvx.so
 vendor/lib64/libvppimmotion.so
 vendor/lib64/libvsc.so
 vendor/lib64/libwms.so
-vendor/lib64/libwqe.so
+vendor/lib64/libwqe.so;DISABLE_CHECKELF
 vendor/lib64/libwvaidl.so
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
@@ -1375,7 +1369,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so;MODULE_SUFFIX=-vendor
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib64/vendor.qti.ims.callcapability@1.0.so
@@ -1387,7 +1381,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
-vendor/lib64/vendor.qti.imsrtpservice@3.0.so
+vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=-vendor
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.latency@2.1.so
 vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
